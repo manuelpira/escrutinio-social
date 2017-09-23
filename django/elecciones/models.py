@@ -144,7 +144,7 @@ class MesaDocumento(models.Model):
     foto = models.ImageField(upload_to=path_foto_documento, null=True, blank=True)
 
     def __str__(self):
-        return f"Mesa {self.mesa__numero}"
+        return f"Mesa {self.mesa}"
 
 class Opcion(models.Model):
     orden = models.PositiveIntegerField(help_text='Orden en el acta')
