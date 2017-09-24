@@ -124,6 +124,9 @@ class Mesa(models.Model):
     foto_acta = models.ImageField(upload_to=path_foto_acta, null=True, blank=True)
     electores = models.PositiveIntegerField(null=True, blank=True)
 
+    def documentos(self):
+        # retorna los documentos asociados a la mesa.
+        return MesaDocumento.objects.filter(mesa=self)
 
     def __str__(self):
         return f"Mesa {self.numero}"
