@@ -88,7 +88,8 @@
             {% for documento in documentos %}
                 <figure>
                     <figcaption>{{ documento.tipo_acta }}</figcaption>
-                    <img src="http://via.placeholder.com/700x960?text=TODO: Get photo path" />
+                    <!--img src="http://via.placeholder.com/700x960?text=TODO: Get photo path" /-->
+                    <img src="http://127.0.0.1:8000{{documento.foto.url}}" />
                 </figure>
             {% endfor %}
         </div>

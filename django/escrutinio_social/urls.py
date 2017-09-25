@@ -7,6 +7,8 @@ from fiscales.views import choice_home, QuieroSerVoluntario, email, confirmar_em
 from fiscales.forms import AuthenticationFormCustomError
 from django.contrib.auth import views as auth_views
 
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', choice_home, name="home"),
@@ -23,4 +25,4 @@ urlpatterns = [
     url(r'^hijack/', include('hijack.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^elecciones/', include(elecciones_urls)),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -327,5 +327,3 @@ class CambiarPassword(PasswordChangeView):
     def form_valid(self, form):
         messages.success(self.request, 'Tu contraseña se cambió correctamente')
         return super().form_valid(form)
-
-
