@@ -10,13 +10,15 @@
 {% block extrahead %}
 
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static "fiscales/better-simple-slideshow-gh-pages/css/simple-slideshow-styles.css" %}" />
+    <script type="text/javascript" src="{% static "fiscales/better-simple-slideshow-gh-pages/js/better-simple-slideshow.js" %}"></script>
+
     <script>
         $(document).ready(function() {
             makeBSS('.slideshow', {fullScreen: true});
         });
     </script>
-    <script type="text/javascript" src="{% static "fiscales/better-simple-slideshow-gh-pages/js/better-simple-slideshow.min.js" %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "fiscales/better-simple-slideshow-gh-pages/css/simple-slideshow-styles.css" %}" />
     <style type="text/css">
 
 .left-panel {
@@ -88,7 +90,6 @@
             {% for documento in documentos %}
                 <figure>
                     <figcaption>{{ documento.tipo_acta }}</figcaption>
-                    <!--img src="http://via.placeholder.com/700x960?text=TODO: Get photo path" /-->
                     <img src="http://127.0.0.1:8000{{documento.foto.url}}" />
                 </figure>
             {% endfor %}

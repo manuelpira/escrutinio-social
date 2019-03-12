@@ -2,6 +2,18 @@
 
 {% block page_title %}Fiscal digital{% endblock %}
 
+{% block extrahead %}
+    {% load static %}
+    <script type="text/javascript" src="{% static "fiscales/better-simple-slideshow-gh-pages/js/better-simple-slideshow.js" %}"></script>
+
+    <script>
+        $(document).ready(function() {
+            makeBSS('.slideshow', {fullScreen: true});
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "fiscales/better-simple-slideshow-gh-pages/css/simple-slideshow-styles.css" %}" />
+{% endblock %}
 
         {% block sidenav_items %}
 
